@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F3E7DA"/>
+  <g transform="translate(200,160)">
+    <ellipse cx="0" cy="60" rx="90" ry="14" fill="#E3A8BB"/>
+    <rect x="-90" y="10" width="180" height="50" rx="8" fill="#F3D6DF"/>
+    <rect x="-70" y="-30" width="140" height="44" rx="8" fill="#FBEEF1"/>
+    <rect x="-6" y="-58" width="12" height="30" rx="3" fill="#DDB85A"/>
+    <ellipse cx="0" cy="-62" rx="6" ry="9" fill="#C9952B"/>
+  </g>
+  <text x="200" y="260" font-family="sans-serif" font-size="13" fill="#B08A77" text-anchor="middle">Photo coming soon</text>
+</svg>

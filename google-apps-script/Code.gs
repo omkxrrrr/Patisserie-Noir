@@ -90,6 +90,7 @@ const POST_ACTIONS = {
   adminUpdateBanner: adminUpdateBanner_,
   adminCreateBlogPost: adminCreateBlogPost_,
   adminUpdateBlogPost: adminUpdateBlogPost_,
+  adminListBlogPosts: adminListBlogPosts_,
   adminCreateGalleryItem: adminCreateGalleryItem_,
   adminDeleteGalleryItem: adminDeleteGalleryItem_,
   getAuditLogs: getAuditLogs_,

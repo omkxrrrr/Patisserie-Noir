@@ -87,6 +87,7 @@ export const contentService = {
   },
   createBanner(payload) { return apiPost('adminCreateBanner', withToken(payload)); },
   updateBanner(payload) { return apiPost('adminUpdateBanner', withToken(payload)); },
+  adminListBlogPosts() { return apiPost('adminListBlogPosts', withToken({})); },
   createBlogPost(payload) { return apiPost('adminCreateBlogPost', withToken(payload)); },
   updateBlogPost(payload) { return apiPost('adminUpdateBlogPost', withToken(payload)); },
   createGalleryItem(payload) { return apiPost('adminCreateGalleryItem', withToken(payload)); },

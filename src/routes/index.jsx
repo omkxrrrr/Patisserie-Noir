@@ -10,12 +10,16 @@ const CakeCatalog = lazy(() => import('../pages/CakeCatalog'));
 const CakeDetail = lazy(() => import('../pages/CakeDetail'));
 const OrderForm = lazy(() => import('../pages/OrderForm'));
 const OrderConfirmation = lazy(() => import('../pages/OrderConfirmation'));
+const Blog = lazy(() => import('../pages/Blog'));
+const BlogPost = lazy(() => import('../pages/BlogPost'));
 
 const AdminLogin = lazy(() => import('../admin/pages/AdminLogin'));
 const AdminDashboard = lazy(() => import('../admin/pages/AdminDashboard'));
 const OrdersPage = lazy(() => import('../admin/pages/OrdersPage'));
 const CustomerManagement = lazy(() => import('../admin/pages/CustomerManagement'));
 const AnalyticsPage = lazy(() => import('../admin/pages/AnalyticsPage'));
+const CakeManagement = lazy(() => import('../admin/pages/CakeManagement'));
+const Content = lazy(() => import('../admin/pages/Content'));
 
 function NotFound() {
   return (
@@ -55,14 +59,8 @@ export default function AppRoutes() {
           path="contact"
           element={<ComingSoon title="Contact Us" description="A dedicated contact form is on the way — for now, reach us directly on WhatsApp using the button in the corner." />}
         />
-        <Route
-          path="blog"
-          element={<ComingSoon title="Cake Journal" description="Cake ideas, trends, and decorating tips are coming to our journal soon." />}
-        />
-        <Route
-          path="blog/:slug"
-          element={<ComingSoon title="Cake Journal" description="This article isn't published yet." />}
-        />
+        <Route path="blog" element={<Blog />} />
+        <Route path="blog/:slug" element={<BlogPost />} />
         <Route
           path="occasions/:occasionId"
           element={<ComingSoon title="Occasion Picks" description="Curated cake picks for this occasion are coming soon — browse the full Cake Menu in the meantime." />}
@@ -100,18 +98,12 @@ export default function AppRoutes() {
         </Route>
 
         <Route element={<AdminRoute minRole="Manager" />}>
-          <Route
-            path="cakes"
-            element={<ComingSoon title="Cake Menu Management" description="Creating, editing, and toggling availability for catalog cakes is coming soon." />}
-          />
+          <Route path="cakes" element={<CakeManagement />} />
           <Route
             path="coupons"
             element={<ComingSoon title="Coupons" description="Coupon creation and management is coming soon." />}
           />
-          <Route
-            path="content"
-            element={<ComingSoon title="Content & Blog" description="Homepage banners, gallery, and blog management are coming soon." />}
-          />
+          <Route path="content" element={<Content />} />
           <Route
             path="reports"
             element={<ComingSoon title="Reports" description="A consolidated CSV / Excel / PDF export hub is coming soon." />}

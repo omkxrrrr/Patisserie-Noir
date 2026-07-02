@@ -95,6 +95,15 @@ function getBlogPostBySlug_(payload) {
   return ok_(rowToBlogPost_(row));
 }
 
+/** Admin: full list including drafts, for the Content & Blog management screen. */
+function adminListBlogPosts_(payload) {
+  const guard = requireRole_(payload.token, 'Manager');
+  if (!guard.ok) return guard.response;
+  let posts = readSheet_('BlogPosts', 0).map(rowToBlogPost_);
+  posts.sort(function (a, b) { return new Date(b.createdAt) - new Date(a.createdAt); });
+  return ok_(posts);
+}
+
 function adminCreateBlogPost_(payload) {
   const guard = requireRole_(payload.token, 'Manager');
   if (!guard.ok) return guard.response;

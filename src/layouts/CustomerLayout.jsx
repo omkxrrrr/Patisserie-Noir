@@ -1,7 +1,9 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import PageLoader from '../components/ui/PageLoader';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
 const SHOP_WHATSAPP = import.meta.env.VITE_SHOP_WHATSAPP_NUMBER || '';
@@ -11,7 +13,9 @@ export default function CustomerLayout() {
     <div className="flex min-h-screen flex-col bg-blush dark:bg-cocoa-900">
       <Header />
       <main className="flex-1">
-        <Outlet />
+        <Suspense fallback={<PageLoader />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
 

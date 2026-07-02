@@ -40,7 +40,7 @@ function getCakes_(payload) {
         c.tags.join(' ').toLowerCase().indexOf(q) !== -1;
     });
   }
-  if (payload.onlyAvailable !== false) {
+  if (payload.onlyAvailable !== false && payload.onlyAvailable !== 'false') {
     cakes = cakes.filter(function (c) { return c.isAvailable; });
   }
   if (payload.featured) cakes = cakes.filter(function (c) { return c.isFeatured; });

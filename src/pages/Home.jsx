@@ -86,8 +86,11 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="container-page grid items-center gap-10 py-12 sm:py-20 lg:grid-cols-2 lg:py-28">
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <section className="container-page grid items-center gap-8 py-10 sm:gap-10 sm:py-16 lg:grid-cols-2 lg:py-28">
+        <motion.div
+          className="order-2 lg:order-1"
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+        >
           <p className="eyebrow mb-4 flex items-center gap-2"><Sparkles size={14} /> Baked fresh, built to order</p>
           <h1 className="font-display text-display-xl text-cocoa-700 dark:text-blush">
             Cakes designed<br />around <span className="text-mulberry-500">your</span> moment.
@@ -96,16 +99,18 @@ export default function Home() {
             Choose a base, customize every layer, and book a delivery slot — all in a few minutes.
             No templates, no shelf cakes. Just yours.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/cakes" className="inline-flex items-center gap-2 rounded-pill bg-mulberry-500 px-7 py-3.5 text-sm font-semibold text-white shadow-card transition-transform hover:scale-[1.02] hover:bg-mulberry-600">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link to="/cakes" className="inline-flex items-center justify-center gap-2 rounded-pill bg-mulberry-500 px-7 py-3.5 text-sm font-semibold text-white shadow-card transition-transform hover:scale-[1.02] hover:bg-mulberry-600">
               Order a Cake <ArrowRight size={16} />
             </Link>
-            <Link to="/custom-orders" className="inline-flex items-center gap-2 rounded-pill border border-cocoa-200 px-7 py-3.5 text-sm font-semibold text-cocoa-700 transition-colors hover:bg-cocoa-50 dark:border-cocoa-600 dark:text-blush">
+            <Link to="/custom-orders" className="inline-flex items-center justify-center gap-2 rounded-pill border border-cocoa-200 px-7 py-3.5 text-sm font-semibold text-cocoa-700 transition-colors hover:bg-cocoa-50 dark:border-cocoa-600 dark:text-blush">
               Plan a Wedding / Bulk Order
             </Link>
           </div>
         </motion.div>
-        <CakeHeroIllustration />
+        <div className="order-1 lg:order-2">
+          <CakeHeroIllustration />
+        </div>
       </section>
 
       {/* How it works */}
